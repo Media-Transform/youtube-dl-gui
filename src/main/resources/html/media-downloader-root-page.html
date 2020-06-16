@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Media Downloader</title>
+<script type="text/javascript">
+	function init(val) {
+		document.getElementById("os").innerHTML = val;
+		document.getElementById("osd").innerHTML = val;
+	}
+</script>
+</head>
+<body>
+	<div class='root'>
+		<div class='header'>Media Downloader</div>
+		<div class='text'>
+			<p>
+				<em>Media Downloader</em> helps with downloading media from the web.
+				It uses applications such as <em>ffmpeg</em> and <em>youtube-dl</em>
+				to make this happen. The extremely smart people who created those
+				applications make this happen.
+			</p>
+			<p>
+				There are 3 applications you will need to install before you can run
+				<em>Media Downloader</em>, namely <em>Python</em>, <em>ffmpeg</em>,
+				and <em>youtube-dl</em>. The instruction for installing these
+				applications are provided below. The goal is to make this work on
+				any platforms, Windows, Mac, Linux, Unix, and others.
+			</p>
+			<p>
+				Your operating system is: <span id="os">here</span>. Therefore,
+				please make sure to install these applications specific to <span
+					id="osd"></span>.
+			<hr>
+			<div class='header2'>Install Python</div>
+			<div class='text'>
+				<p>
+					NOTE: For Windows installations: Python is not required for Windows
+					installation since the <em>youtube-dl</em> comes embedded with
+					Python.
+				</p>
+				<p>
+					For Mac OS installations: <a
+						href="https://www.python.org/downloads/mac-osx/">Mac OS
+						Installation</a>
+				</p>
+				<p>
+					For Linux and other OS: <a href="https://www.python.org/downloads/">Linux
+						and Other OSs</a>
+				</p>
+			</div>
+			<div class='header2'>Install ffmpeg</div>
+			<div class='text'>
+				<p>Download and install the packages and executable files</p>
+				<p>
+					For all OS: <a href="https://www.ffmpeg.org/download.html">All
+						OSs</a>
+				</p>
+			</div>
+			<div class='header2'>youtube-dl</div>
+			<p>
+				For all OS: <a
+					href='https://ytdl-org.github.io/youtube-dl/download.html'>All
+					OSs</a>
+			</p>
+			<p>NOTE: For Windows, just save this file somewhere since it does
+				not install anything onto your computer.</p>
+			<hr>
+			<p>
+				Once all of these applications are installed, then run <em>Media
+					Downloader</em>, go to File->Preferences and locate the applications you
+				just installed.
+		</div>
+	</div>
+</body>
+</html>

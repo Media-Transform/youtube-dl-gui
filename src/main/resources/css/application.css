@@ -1,0 +1,119 @@
+/**
+ * Style the main scene
+ */
+.root {
+	-fx-graphic: url("../media/home.png");
+}
+
+/**
+ * This is the main top level box that contains the
+ * menu and the main-widget-box.
+ */
+#main-box {
+	-fx-background-image: url("../media/main-bg.png");
+	-fx-border-color: #543461;
+	-fx-border-width: 2.0;
+}
+
+#main-widget-text-message {
+	-fx-font-size: 20.0pt;
+	-fx-font-weight: normal;
+}
+
+.label {
+	-fx-padding: 0.0 30.0 0.0 0.0;
+	-fx-font-weight: bold;
+}
+
+#menu11>.label {
+	-fx-graphic: url("../media/home.png");
+}
+
+#menu12>.label {
+	-fx-graphic: url("../media/preference.png");
+}
+
+#menu13>.label {
+	-fx-graphic: url("../media/exit.png");
+}
+
+#menu31>.label {
+	-fx-graphic: url("../media/yt-live.png");
+}
+
+#menu32>.label {
+	-fx-graphic: url("../media/yt-video.png");
+}
+
+#menu33>.label {
+	-fx-graphic: url("../media/tubitv.png");
+}
+
+#menuHelp>.label {
+	-fx-graphic: url("../media/help.png");
+}
+
+#menuLanguage1>.label {
+	-fx-graphic: url("../media/languages/en.png");
+}
+
+#menuLanguage2>.label {
+	-fx-graphic: url("../media/languages/ml.png");
+}
+
+#dialog-grid {
+	-fx-border-color: rgb(205.0, 205.0, 205.0);
+	-fx-border-width: 1.0;
+}
+
+/**
+ * This has to come after the labels.
+ */
+#menu11>.accelerator-text, #menu13>.accelerator-text, #menu13>.accelerator-text,
+	#menu31>.accelerator-text, #menu32>.accelerator-text, #menu33>.accelerator-text,
+	#menu41>.accelerator-text {
+	-fx-padding: 0.0 5.0 0.0 0.0;
+	-fx-graphic: none;
+}
+
+Accelerator-Text {
+	-fx-padding: 0.0 5.0 0.0 0.0;
+	-fx-graphic: none;
+}
+
+#menu-box {
+	-fx-border-color: rgb(205.0, 205.0, 205.0);
+	-fx-border-width: 1.0;
+}
+
+/**
+ * Rules for the main-widget 
+ */
+#main-widget-box {
+	-fx-border-color: #FFBDA9;
+	-fx-border-width: 10.0;
+	-fx-border-insets: 0.0 0.0 0.0 0.0;
+}
+
+#main-widget-box>Text {
+	-fx-font-family: "Verdana";
+	-fx-font-size: 12.0pt;
+	-fx-text-alignment: justify;
+}
+
+#main-widget-box>Label {
+	-fx-font-size: 16.0pt;
+	-fx-padding: 0.0 0.0 5.0 0.0;
+}
+
+.progress-bar {
+	-fx-accent: red;
+}
+
+.progress-bar-completed {
+	-fx-accent: green;
+}
+
+#url-field {
+	-fx-max-width: 300.0;
+}

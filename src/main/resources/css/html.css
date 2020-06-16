@@ -1,0 +1,53 @@
+body {
+	font-family: Georgia;
+	height: 95%;
+	background-image: url(../media/logo/media-download.png);
+	text-align: justify;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.root {
+	border: 1px solid rgb(200, 200, 200);
+	height: 100%;
+	vertical-align: middle;
+	border-radius: 3px;
+	padding: 5px;
+	background-color: rgba(255, 255, 255, .9);
+}
+
+.header {
+	font-size: 16pt;
+	text-align: center;
+	margin: auto;
+	font-weight: bold;
+	color: rgb(200, 10, 10);
+}
+
+.header2 {
+	font-size: 14pt;
+	text-align: center;
+	margin: auto;
+	font-weight: bold;
+	color: rgb(10, 10, 200);
+}
+
+em {
+	font-weight: bold;
+	font-style: normal;
+}
+
+.text {
+	padding: 10px;
+}
+
+#os, #osd {
+	font-weight: bold;
+	font-variant: small-caps;
+}
+
+img {
+	vertical-align: middle;
+	float:left;
+}
