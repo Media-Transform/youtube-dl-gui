@@ -53,7 +53,6 @@ public class MainApplication extends Application {
 
 			locale = new SimpleObjectProperty<>(Locale.ENGLISH);
 			locale.addListener((observable, oldValue, newValue) -> {
-				System.out.println("Setting language to [" + newValue + "]");
 				Locale.setDefault(newValue);
 			});
 

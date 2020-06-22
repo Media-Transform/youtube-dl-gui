@@ -96,7 +96,6 @@ public class ProcessConfiguration {
 			in.close();
 
 		} catch (IOException | NullPointerException | ClassNotFoundException e) {
-			System.out.println("Caught exception " + e);
 			configuration = new Configuration();
 		}
 	}

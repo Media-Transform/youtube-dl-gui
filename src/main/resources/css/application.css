@@ -61,6 +61,31 @@
 	-fx-graphic: url("../media/languages/ml.png");
 }
 
+#menuUtility1>.label {
+	-fx-graphic: url("../media/utility/convert.png");
+}
+
+#menuUtility2>.label {
+	-fx-graphic: url("../media/utility/merge.png");
+}
+
+#menuUtility3>.label {
+	-fx-graphic: url("../media/utility/merge-av.png");
+}
+
+#menuUtility4>.label {
+	-fx-graphic: url("../media/utility/watermark.png");
+}
+
+#menuUtility5>.label {
+	-fx-graphic: url("../media/utility/split.png");
+}
+
+#menuUtility6>.label {
+	-fx-graphic: url("../media/utility/trim.png");
+}
+
+
 #dialog-grid {
 	-fx-border-color: rgb(205.0, 205.0, 205.0);
 	-fx-border-width: 1.0;

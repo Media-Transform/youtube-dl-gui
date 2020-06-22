@@ -98,18 +98,12 @@ public class ProcessMedia extends DownloadBase {
 	 * @param audio
 	 * @return
 	 */
-	public RunCommand mergeAV(String video, String audio) {
+	public RunCommand mergeAV(String video, String audio, String outputFileName) {
 		File file = new File(video);
-
-		Optional<String> ext = getExtensionByString(video);
-		String fileExtension = ext.isPresent() ? ext.get() : "mp4";
-
-		String outputFileName = file.getParent() + "/" + file.getName() + "-merged." + fileExtension;
 
 		return new RunCommand(createCommandFromStrings(pc.getConfiguration().getFfmpeg().getAbsolutePath(), "-loglevel",
 				logLevel, "-y", "-i", video, "-i", audio, "-c:v", "copy", "-c:a", "aac", "-map", "0:v:0?", "-map",
-				"1:a:0?", "-shortest", outputFileName));
-
+				"1:a:0?", "-shortest", file.getParent() + "/" + outputFileName));
 	}
 
 	/**
@@ -133,7 +127,7 @@ public class ProcessMedia extends DownloadBase {
 	 * @param image
 	 * @return
 	 */
-	public RunCommand watermark(String video, String image, String pos) {
+	public RunCommand watermark(String video, String image, String pos, String outputFileName) {
 		String overlay;
 		if (pos.equals("tl")) {
 			overlay = "overlay=10:10";
@@ -169,9 +163,9 @@ public class ProcessMedia extends DownloadBase {
 
 		cmd.add("-filter_complex");
 		cmd.add(overlay);
-		Optional<String> ext = getExtensionByString(video);
-		String fileExt = ext.isPresent() ? ext.get() : "mp4";
-		cmd.add(video + "-watermark." + fileExt);
+
+		File file = new File(video);
+		cmd.add(file.getParent() + "/" + outputFileName);
 		return new RunCommand(cmd);
 	}
 
@@ -185,17 +179,73 @@ public class ProcessMedia extends DownloadBase {
 	 * @param pos
 	 * @return
 	 */
-	public RunCommand split(String video, String pos) {
+	public RunCommand split(String video, String pos, String outputFileName) {
 		List<List<String>> commands = new ArrayList<List<String>>();
+
+		Optional<String> ext = getExtensionByString(outputFileName);
+		String extension = ext.isPresent() ? ext.get() : "mp4";
+
+		File file = new File(video);
 
 		commands.add(createCommandFromStrings(pc.getConfiguration().getFfmpeg().getAbsolutePath(), "-loglevel",
 				logLevel, "-y", "-i", video, "-ss", "0", "-to", pos, "-c:v", "libx264", "-c:a", "libmp3lame",
-				video + "-split01." + getExtensionByString(video).get()));
+				file.getParent() + "/" + outputFileName + "-split01." + extension));
 
 		commands.add(createCommandFromStrings(pc.getConfiguration().getFfmpeg().getAbsolutePath(), "-loglevel",
 				logLevel, "-y", "-i", video, "-ss", pos, "-c:v", "libx264", "-c:a", "libmp3lame",
-				video + "-split02." + getExtensionByString(video).get()));
+				file.getParent() + "/" + outputFileName + "-split02." + extension));
 
+		return new RunCommand(commands);
+	}
+
+	/**
+	 * ffmpeg -i input.mp4 -ss 01:19:27 -to 02:18:51 -c:v copy -c:a copy
+	 * output.mp4<br>
+	 * If input format is the same as the output format, then we can use -c:v copy
+	 * -c:a copy
+	 * 
+	 * @param video
+	 * @param start
+	 * @param end
+	 * @param outputFileName
+	 * @return
+	 */
+	public RunCommand trim(String video, String start, String end, String outputFileName) {
+		Optional<String> ext = getExtensionByString(outputFileName);
+		String outputExt = ext.isPresent() ? ext.get() : "mp4";
+
+		ext = getExtensionByString(video);
+		String inputExt = ext.isPresent() ? ext.get() : "mp4";
+
+		File file = new File(video);
+		List<String> commands = createCommandFromStrings(pc.getConfiguration().getFfmpeg().getAbsolutePath(),
+				"-loglevel", logLevel, "-y", "-i", video);
+		if (start != null && !start.trim().isEmpty()) {
+			commands.add("-ss");
+			commands.add(start);
+		}
+		if (end != null && !end.trim().isEmpty()) {
+			commands.add("-to");
+			commands.add(end);
+		}
+
+		/**
+		 * If the input ext and output ext are different, then we cannot copy audio or
+		 * video.
+		 */
+		if (!outputExt.equals(inputExt)) {
+			commands.add("-c:v");
+			commands.add("libx264");
+			commands.add("-c:a");
+			commands.add("libmp3lame");
+		} else {
+			commands.add("-c:v");
+			commands.add("copy");
+			commands.add("-c:a");
+			commands.add("copy");
+		}
+
+		commands.add(file.getParent() + "/" + outputFileName);
 		return new RunCommand(commands);
 	}
 
@@ -261,33 +311,6 @@ public class ProcessMedia extends DownloadBase {
 			e.printStackTrace();
 		}
 		return null;
-	}
-
-	private File createTmpDir() {
-		String tmpDir = Paths.get(System.getProperty("java.io.tmpdir"), "youtube-downloader").toString();
-		File dir = new File(tmpDir);
-		if (!dir.isDirectory()) {
-			dir.mkdirs();
-		}
-		return dir;
-	}
-
-	private List<String> createConcatRunCommand(File inputFileName) {
-		List<String> rval = new ArrayList<String>();
-		rval.add(pc.getConfiguration().getFfmpeg().getAbsolutePath());
-		rval.add("-y");
-		rval.add("-f");
-		rval.add("concat");
-		rval.add("-safe");
-		rval.add("0");
-		rval.add("-i");
-		rval.add(inputFileName.getAbsolutePath());
-
-		rval.add("-c:v");
-		rval.add("copy");
-		rval.add(firstSourceFile.getParent() + "/" + destFileName);
-
-		return rval;
 	}
 
 	/**

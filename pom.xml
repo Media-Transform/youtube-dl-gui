@@ -8,15 +8,18 @@
 	<packaging>jar</packaging>
 
 	<artifactId>media-downloader</artifactId>
-	<name>[sunilsamuel] :: Application Authorize</name>
-	<description>Tools to create authentication and authorization for applications</description>
+	<name>[sunilsamuel] :: Media Downloader</name>
+	<description>Download and process media (video and audio)</description>
 
 	<properties>
 		<slf4j.version>1.7.30</slf4j.version>
+		<junit.version>5.6.2</junit.version>
 		<maven.compiler.version>3.8.1</maven.compiler.version>
 		<maven.jar.version>3.2.0</maven.jar.version>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
+
+		<main.class>com.sunilsamuel.media.capture.MainClass</main.class>
 	</properties>
 
 	<dependencies>
@@ -24,7 +27,7 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.6.2</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -37,25 +40,35 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven.compiler.version}</version>
 				<configuration>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>${maven.jar.version}</version>
 				<configuration>
 					<archive>
+						<index>true</index>
 						<manifest>
-							<!-- Jar file entry point -->
-							<mainClass>com.sunilsamuel.media.capture.MainApplication</mainClass>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib</classpathPrefix>
+							<mainClass>${main.class}</mainClass>
 						</manifest>
+						<manifestEntries>
+							<Class-Path></Class-Path>
+							<Created-By>Sunil Samuel</Created-By>
+							<Build-Jdk-Spec></Build-Jdk-Spec>
+						</manifestEntries>
 					</archive>
 				</configuration>
 			</plugin>
-
-
 		</plugins>
 
 	</build>

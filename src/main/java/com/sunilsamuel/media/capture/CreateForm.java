@@ -364,19 +364,21 @@ public class CreateForm {
 					FileChooser fileChooser = new FileChooser();
 					LanguageBinding.bindTextProperty(fileChooser.titleProperty(), labelTextKey);
 					if (defaultText != null) {
-						System.out.println("Default text is not null and is [" + defaultText + "]");
 						String firstFile = defaultText;
 						if (defaultText.contains(",")) {
 							firstFile = defaultText.replaceAll("[\\[\\]]", "");
 							firstFile = firstFile.split(",")[0];
-							System.out.println("First file is [" + firstFile + "]");
 						}
 						File file = new File(firstFile);
-						fileChooser.setInitialDirectory(file.getParentFile());
+						if (file.isDirectory()) {
+							fileChooser.setInitialDirectory(file);
+						} else {
+							fileChooser.setInitialDirectory(file.getParentFile());
+						}
 					}
 					Object pickedDirectory;
 					if (multiple) {
-						pickedDirectory = (List<File>) fileChooser.showOpenMultipleDialog(null);
+						pickedDirectory = fileChooser.showOpenMultipleDialog(null);
 						if (pickedDirectory != null) {
 							textField.setText(pickedDirectory.toString());
 						}

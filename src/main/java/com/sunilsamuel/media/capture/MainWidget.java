@@ -164,7 +164,6 @@ public class MainWidget {
 
 		command.setTextArea(ta);
 		command.start();
-		System.out.println("DIALOG SHOW");
 	}
 
 	public ButtonType setAlertConfirm(String titleKey, String contentKey) {
@@ -301,16 +300,12 @@ public class MainWidget {
 		}
 
 		webView.getEngine().getLoadWorker().stateProperty().addListener((ob, oldValue, newValue) -> {
-			System.out.println("Calling [" + webView.getEngine().getLocation() + "]");
 			urlField.setText(webView.getEngine().getLocation());
 			if (newValue == State.SCHEDULED) {
-				System.out.println("In schedule");
 			} else if (newValue == State.RUNNING) {
-				System.out.println("Running now");
 			} else if (newValue == State.SUCCEEDED) {
 				progressBar.getStyleClass().add("progress-bar-completed");
 				urlField.setText(webView.getEngine().getLocation());
-				System.out.println("In succeeded [" + webView.getEngine().getUserAgent() + "]");
 			}
 		});
 

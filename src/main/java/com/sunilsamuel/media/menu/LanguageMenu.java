@@ -44,7 +44,6 @@ public class LanguageMenu extends MenuBase {
 		menuLanguage1.setId("menuLanguage1");
 
 		menuLanguage1.setOnAction(e -> {
-			System.out.println("In english");
 			Locale.setDefault(Locale.ENGLISH);
 			LanguageBinding.setLocale(Locale.ENGLISH);
 		});
@@ -58,7 +57,6 @@ public class LanguageMenu extends MenuBase {
 		menuLanguage1.setId("menuLanguage2");
 
 		menuLanguage1.setOnAction(e -> {
-			System.out.println("In malayalam");
 			Locale malayalam = new Locale("ml", "Malayalam", "\u0D2E\u0D32\u0D2F\u0D3E\u0D33\u0D02");
 			Locale.setDefault(malayalam);
 			LanguageBinding.setLocale(malayalam);
