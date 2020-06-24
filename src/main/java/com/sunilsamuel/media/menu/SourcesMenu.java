@@ -70,7 +70,7 @@ public class SourcesMenu extends MenuBase {
 		menu212.setId("menu212");
 		menu212.setOnAction(e -> {
 			String url = mainWidget.setDialog("text.youtube.dialog.title", "text.youtube.dialog.text",
-					"https://www.youtube.com/watch?v=2zWIy_vfOqw");
+					LanguageBinding.get("text.download.ytv.url.example"));
 			if (url != null) {
 				mainWidget.setUrl(url);
 			}

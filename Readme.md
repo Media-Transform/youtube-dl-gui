@@ -1,11 +1,11 @@
-#Introduction
+# Introduction
 
 This is a Java JavaFX based application that provides an interface to the `youtube-dl` and `ffmpeg` applications.
 The intent is to provide a easy interface to allow using the functionalities of these application so that you can
 download and store video and audio from different web sites including Facebook, YouTube, and lots of others as detailed
 in the `youtube-dl` [Youtube-DL](https://github.com/ytdl-org/youtube-dl).
 
-#Technology Stack and Dependencies
+# Technology Stack and Dependencies
 
 * Maven
 * Java
@@ -14,7 +14,7 @@ in the `youtube-dl` [Youtube-DL](https://github.com/ytdl-org/youtube-dl).
 * ffmpeg
 * python
 
-#Installation
+# Installation
 
 If you are interested in just the application, then download the two files from the `download` directory, namely
 * **media-processing.bat** - A simple Windows batch script.  Double click on this .bat file and it will run the application.  This script will check to see if you have Java installed and then 
