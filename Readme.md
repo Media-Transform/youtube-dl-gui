@@ -1,3 +1,10 @@
+<p align='right'>
+	<small>Sunil Samuel<br>
+		web_github@sunilsamuel.com<br>
+		http://www.sunilsamuel.com
+	</small>
+</p>
+
 # Introduction
 
 This is a Java JavaFX based application that provides an
