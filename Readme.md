@@ -1,8 +1,11 @@
 # Introduction
 
-This is a Java JavaFX based application that provides an interface to the `youtube-dl` and `ffmpeg` applications.
-The intent is to provide a easy interface to allow using the functionalities of these application so that you can
-download and store video and audio from different web sites including Facebook, YouTube, and lots of others as detailed
+This is a Java JavaFX based application that provides an
+interface to the `youtube-dl` and `ffmpeg` applications.
+The intent is to provide an easy interface to allow using 
+the functionalities of these application so that you can
+download and store video and audio from different web sites
+including Facebook, YouTube, and lots of others as detailed
 in the `youtube-dl` [Youtube-DL](https://github.com/ytdl-org/youtube-dl).
 
 # Technology Stack and Dependencies
@@ -16,24 +19,32 @@ in the `youtube-dl` [Youtube-DL](https://github.com/ytdl-org/youtube-dl).
 
 # Installation
 
-If you are interested in just the application, then download the two files from the `download` directory, namely
-* **media-processing.bat** - A simple Windows batch script.  Double click on this .bat file and it will run the application.  This script will check to see if you have Java installed and then 
-will run the `media-processing.jar` file using command `java -jar media-processing.jar`.
-* **media-processing.jar** - The java JAR file that is already compiled and ready to run.
+If you are interested in just the application, then download the two
+files from the `download` directory, namely
+* **media-processing.bat** - A simple Windows batch script.  Double 
+click on this .bat file and it will run the application.  This script 
+will check to see if you have Java installed and then 
+will run the `media-processing.jar` file using command 
+`java -jar media-processing.jar`.
+* **media-processing.jar** - The java JAR file that is already compiled
+and ready to run.
 
 # Run the Application
 
-To run the application on any platform, copy and paste the following command onto the 
-terminal (cmd, xterm, ...).  Make sure to run this command in the directory where you
-downloaded the two applications see [Installation](#installation):
+To run the application on any platform, copy and paste the following
+command onto the terminal (cmd, xterm, ...).  Make sure to run this
+command in the directory where you downloaded the two applications
+see [Installation](#installation):
 
 ```java
 java -jar media-processing.jar
 ```
 
-On Windows, you should be able to just double click on the `media-process.bat` file
-and the script will run the command.
+On Windows, you should be able to just double click on the
+`media-process.bat` file and the script will run the command.
 
-Once the application is running, just following the instructions on the main 
-page.
+Once the application is running, just following the instructions
+on the main page.
+
+![Media Processing](docs/img/main-page.jpg)
 
