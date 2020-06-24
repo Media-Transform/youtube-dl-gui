@@ -383,7 +383,7 @@ public class CreateForm {
 							textField.setText(pickedDirectory.toString());
 						}
 					} else {
-						pickedDirectory = (File) fileChooser.showOpenDialog(null);
+						pickedDirectory = fileChooser.showOpenDialog(null);
 						if (pickedDirectory != null) {
 							textField.setText(((File) pickedDirectory).getAbsolutePath());
 						}
