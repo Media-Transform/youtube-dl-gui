@@ -113,7 +113,7 @@ public class DownloadMenu extends MenuBase {
 
 		Map<String, String> result = new CreateForm() //
 				.setDialogTitle("text.download.ytv.dialog.header")
-				.setButtonTitle("text.download.ytv.button.ok", "text.download.ytv.button.cancel") //
+				.setButtonTitle("text.download.ytv.button.ok", "text.cancel.generic.button") //
 				.createTextMessage("text.download.yt.message")
 				.createTextField("text.download.ytv.url", "text.download.ytv.url.example", "url", newUrl)
 				.createTextFieldDirChooser("text.download.dir", "text.download.output.dir", "output-dir",
@@ -155,7 +155,7 @@ public class DownloadMenu extends MenuBase {
 
 		Map<String, String> result = new CreateForm() //
 				.setDialogTitle("text.download.ytl.dialog.title")
-				.setButtonTitle("text.download.ytv.button.ok", "text.download.ytv.button.cancel") //
+				.setButtonTitle("text.download.ytv.button.ok", "text.cancel.generic.button") //
 				.createTextMessage("text.download.yt.message")
 				.createTextField("text.download.ytl.url", "text.download.ytl.url.example", "url", newUrl)
 				.createTextFieldDirChooser("text.download.dir", "text.download.output.dir", "output-dir",
@@ -200,7 +200,7 @@ public class DownloadMenu extends MenuBase {
 
 		Map<String, String> result = new CreateForm() //
 				.setDialogTitle("text.download.tubi.dialog.header")
-				.setButtonTitle("text.download.tubi.button.ok", "text.download.tubi.button.cancel") //
+				.setButtonTitle("text.download.tubi.button.ok", "text.cancel.generic.button") //
 				.createTextMessage("text.download.tubi.message") //
 				.createTextField("text.download.tubi.url", "text.download.tubi.url.example", "url", newUrl)
 				.createTextFieldDirChooser("text.download.dir", "text.download.output.dir", "output-dir",

@@ -48,10 +48,10 @@ java -jar media-processing.jar
 ```
 
 On Windows, you should be able to just double click on the
-`media-process.bat` file and the script will run the command.
+`media-processing.bat` file and the script will run the command.
 
 Once the application is running, just following the instructions
 on the main page.
 
-![Media Processing](docs/img/main-page.jpg)
+![Media Processing](docs/img/demo.gif)
 

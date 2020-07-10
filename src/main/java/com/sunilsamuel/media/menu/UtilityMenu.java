@@ -107,7 +107,7 @@ public class UtilityMenu extends MenuBase {
 
 		Map<String, String> result = new CreateForm() //
 				.setDialogTitle("text.convert.dialog.header")
-				.setButtonTitle("text.convert.button.ok", "text.convert.button.cancel") //
+				.setButtonTitle("text.convert.button.ok", "text.cancel.generic.button") //
 				.createTextMessage("text.convert.message") //
 				.createTextFieldFileChooser("text.convert.dir.chooser.title", "text.convert.dir.chooser.prompt",
 						"convert-file", (ytStore == null ? null : ytStore.getOutputDirectory()))
@@ -141,19 +141,19 @@ public class UtilityMenu extends MenuBase {
 	}
 
 	public void processMergeVideos() {
-		String storeName = "merge-video";
+		String storeName = "concat-video";
 		Store ytStore = pc.getStoreByKey(storeName);
 
 		Map<String, String> result = new CreateForm() //
-				.setDialogTitle("text.convert.dialog.header")
-				.setButtonTitle("text.convert.button.ok", "text.convert.button.cancel") //
-				.createTextMessage("text.convert.message") //
+				.setDialogTitle("text.concat.dialog.header")
+				.setButtonTitle("text.concat.button.ok", "text.cancel.generic.button") //
+				.createTextMessage("text.merge.message") //
 				.createTextFieldFileChooser("text.convert.dir.chooser.title", "text.convert.dir.chooser.prompt",
 						"convert-file", (ytStore == null ? null : ytStore.getOutputDirectory()), true)
 				.createSeparator()//
-				.createCheckBox("text.merge.res", "same-resolution") //
+				.createCheckBox("text.concat.res", "same-resolution") //
 				.createSeparator()//
-				.createTextMessage("text.convert.to.message")
+				.createTextMessage("text.generic.output.file.message")
 				.createTextField("text.download.file", "text.download.output.file", "output-file",
 						(ytStore == null ? null : ytStore.getOutputFileName()))
 				.createComboBox("text.download.ffmpeg.logLevel", "verbosity", ffmpegVerbosityLevels, 1)
@@ -189,7 +189,7 @@ public class UtilityMenu extends MenuBase {
 
 		Map<String, String> result = new CreateForm() //
 				.setDialogTitle("text.mav.dialog.header")
-				.setButtonTitle("text.convert.button.ok", "text.convert.button.cancel") //
+				.setButtonTitle("text.convert.button.ok", "text.cancel.generic.button") //
 				.createTextMessage("text.mav.message") //
 				.createTextFieldFileChooser("text.mav.video.chooser.title", "text.mav.video.chooser.title", "mav-video",
 						(ytStore == null ? null : ytStore.getOutputDirectory()))
@@ -198,7 +198,7 @@ public class UtilityMenu extends MenuBase {
 						(ytStore == null ? null : ytStore.getOutputDirectory()))
 				.createComboBox("text.download.ffmpeg.logLevel", "verbosity", ffmpegVerbosityLevels, 1)
 				.createSeparator() //
-				.createTextMessage("text.convert.to.message")
+				.createTextMessage("text.generic.output.file.message")
 				.createTextField("text.download.file", "text.download.output.file", "output-file",
 						(ytStore == null ? null : ytStore.getOutputFileName()))
 
@@ -233,7 +233,7 @@ public class UtilityMenu extends MenuBase {
 
 		Map<String, String> result = new CreateForm() //
 				.setDialogTitle("text.wm.dialog.header")
-				.setButtonTitle("text.convert.button.ok", "text.convert.button.cancel") //
+				.setButtonTitle("text.convert.button.ok", "text.cancel.generic.button") //
 				.createTextMessage("text.wm.message") //
 				.createSeparator() //
 				.createTextFieldFileChooser("text.wm.video.chooser.title", "text.wm.video.chooser.title", "wm-video",
@@ -247,7 +247,7 @@ public class UtilityMenu extends MenuBase {
 						"text.wm.rb.bl:bl", "text.wm.rb.br:br", "text.wm.rb.center:center" }), "wm-pos")
 				.createSeparator()
 				.createComboBox("text.download.ffmpeg.logLevel", "verbosity", ffmpegVerbosityLevels, 1)
-				.createTextMessage("text.convert.to.message")
+				.createTextMessage("text.generic.output.file.message")
 				.createTextField("text.download.file", "text.download.output.file", "output-file",
 						(ytStore == null ? null : ytStore.getOutputFileName()))
 
@@ -283,7 +283,7 @@ public class UtilityMenu extends MenuBase {
 
 		Map<String, String> result = new CreateForm() //
 				.setDialogTitle("text.split.dialog.header")
-				.setButtonTitle("text.convert.button.ok", "text.convert.button.cancel") //
+				.setButtonTitle("text.convert.button.ok", "text.cancel.generic.button") //
 				.createTextMessage("text.split.message") //
 				.createSeparator() //
 				.createTextFieldFileChooser("text.split.video.chooser.title", "text.split.video.chooser.title",
@@ -292,7 +292,7 @@ public class UtilityMenu extends MenuBase {
 				.createTextMessage("text.split.video.pos.message").createSeparator()
 				.createTextField("text.split.position", "text.download.ytl.timeout.example", "split-pos",
 						(ytStore == null ? null : ytStore.getMaxRecordTime()))
-				.createSeparator().createTextMessage("text.convert.to.message")
+				.createSeparator().createTextMessage("text.generic.output.file.message")
 				.createTextField("text.download.file", "text.download.output.file", "output-file",
 						(ytStore == null ? null : ytStore.getOutputFileName()))
 				.createSeparator()
@@ -328,7 +328,7 @@ public class UtilityMenu extends MenuBase {
 
 		Map<String, String> result = new CreateForm() //
 				.setDialogTitle("text.trim.dialog.header")
-				.setButtonTitle("text.convert.button.ok", "text.convert.button.cancel") //
+				.setButtonTitle("text.convert.button.ok", "text.cancel.generic.button") //
 				.createTextMessage("text.trim.message") //
 				.createSeparator() //
 				.createTextFieldFileChooser("text.split.video.chooser.title", "text.split.video.chooser.title",
