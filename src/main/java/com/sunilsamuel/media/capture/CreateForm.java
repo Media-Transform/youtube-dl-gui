@@ -282,8 +282,12 @@ public class CreateForm {
 		textField.setPromptText(LanguageBinding.get(promptTextKey));
 
 		textField.setId(id);
+		File file;
 		if (defaultText != null) {
 			textField.setText(defaultText);
+			file = new File(defaultText);
+		} else {
+			file = new File (System.getProperty("user.home"));
 		}
 
 		textFields.add(textField);
@@ -306,7 +310,6 @@ public class CreateForm {
 					DirectoryChooser dirChooser = new DirectoryChooser();
 					// dirChooser.setTitle(labelText);
 					LanguageBinding.bindTextProperty(dirChooser.titleProperty(), labelTextKey);
-					File file = new File(defaultText);
 					dirChooser.setInitialDirectory(file);
 					File pickedDirectory = dirChooser.showDialog(null);
 					if (pickedDirectory != null) {

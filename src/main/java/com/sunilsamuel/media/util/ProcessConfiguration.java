@@ -52,7 +52,7 @@ public class ProcessConfiguration {
 
 	public ProcessConfiguration() {
 		String home = getDefaultDirectory();
-		this.configFileName = home + "/.media-downloader.cfg";
+		this.configFileName = home + "/.media-processor.cfg";
 		this.configuration = new Configuration();
 		loadConfiguration();
 	}

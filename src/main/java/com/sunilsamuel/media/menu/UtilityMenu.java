@@ -147,7 +147,7 @@ public class UtilityMenu extends MenuBase {
 		Map<String, String> result = new CreateForm() //
 				.setDialogTitle("text.concat.dialog.header")
 				.setButtonTitle("text.concat.button.ok", "text.cancel.generic.button") //
-				.createTextMessage("text.merge.message") //
+				.createTextMessage("text.concat.message") //
 				.createTextFieldFileChooser("text.convert.dir.chooser.title", "text.convert.dir.chooser.prompt",
 						"convert-file", (ytStore == null ? null : ytStore.getOutputDirectory()), true)
 				.createSeparator()//

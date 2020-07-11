@@ -7,8 +7,8 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<artifactId>media-processing</artifactId>
-	<name>[sunilsamuel] :: Media Processing</name>
+	<artifactId>media-processor</artifactId>
+	<name>[sunilsamuel] :: Media Processor</name>
 	<description>Download and process media (video and audio)</description>
 
 	<properties>
@@ -34,7 +34,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>media-processing</finalName>
+		<finalName>media-processor</finalName>
 		<plugins>
 			<!-- The Compiler Plugin is used to compile the sources of project -->
 			<plugin>

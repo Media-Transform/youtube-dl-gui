@@ -257,9 +257,9 @@ public class ProcessMedia extends DownloadBase {
 	 */
 	//
 	private RunCommand processConvert() {
-		List<String> cmd = new ArrayList<String>();
+		List<String> cmd;
 
-		createCommandFromStrings(pc.getConfiguration().getFfmpeg().getAbsolutePath(), "-loglevel", logLevel, "-y", "-i",
+		cmd = createCommandFromStrings(pc.getConfiguration().getFfmpeg().getAbsolutePath(), "-loglevel", logLevel, "-y", "-i",
 				sourceFileNames.get(0), "-c:v", "libx264", "-c:a", "libmp3lame",
 				firstSourceFile.getParent() + "/" + destFileName);
 

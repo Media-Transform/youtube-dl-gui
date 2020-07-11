@@ -31,8 +31,8 @@ files from the `download` directory, namely
 * **media-processing.bat** - A simple Windows batch script.  Double 
 click on this .bat file and it will run the application.  This script 
 will check to see if you have Java installed and then 
-will run the `media-processing.jar` file using command 
-`java -jar media-processing.jar`.
+will run the `media-processor.jar` file using command 
+`java -jar media-processor.jar`.
 * **media-processing.jar** - The java JAR file that is already compiled
 and ready to run.
 
@@ -44,7 +44,7 @@ command in the directory where you downloaded the two applications
 see [Installation](#installation):
 
 ```java
-java -jar media-processing.jar
+java -jar media-processor.jar
 ```
 
 On Windows, you should be able to just double click on the
@@ -53,5 +53,5 @@ On Windows, you should be able to just double click on the
 Once the application is running, just following the instructions
 on the main page.
 
-![Media Processing](docs/img/demo.gif)
+![Media Processor](docs/img/demo.gif)
 
