@@ -1,7 +1,7 @@
 @echo off
 
-set appTitle="Media-Processing"
-set appJar="media-processing.jar"
+set appTitle="Media-Processor"
+set appJar="media-processor.jar"
 echo Running %appTitle%
 
 ::
